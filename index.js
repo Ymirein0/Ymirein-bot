@@ -1,8 +1,6 @@
 const { Client, GatewayIntentBits } = require("discord.js")
 require ("dotenv").config()
 
-const TOKEN = "MTAyNTg5MjM3ODM2MTQ3MTA0Ng.GR4n6r.BbXVIwmqIEUy_BiCGIc8VieJman4NYBEFowN64"
-
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
