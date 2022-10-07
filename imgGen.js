@@ -1,4 +1,4 @@
-const Canvas = require("canvas")
+const Canvas = require ("canvas")
 const Discord = require ("discord.js")
 
 const background = "https://i.imgur.com/zvWTUVu.png"
