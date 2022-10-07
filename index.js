@@ -24,11 +24,12 @@ client.on("messageCreate", (message) => {
 
 const BoasVindasMD = "1025895863471579208"
 
-client.on("guildMemberAdd"), async (member) => {
+client.on("guildMemberAdd", async (member) => {
     const img = await imgGen(member)
     member.guild.channels.cache.get(BoasVindasMD).send({
         content: `<@${member.id}>, seja bem-vindo!`,
         files: [img]
     })
-}
-client.login(process.dotenv.TOKEN)
+})
+
+client.login(process.env.TOKEN)
