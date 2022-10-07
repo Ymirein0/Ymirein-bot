@@ -1,7 +1,7 @@
 const { Client, GatewayIntentBits } = require("discord.js")
 require ("dotenv").config()
 
-const TOKEN = "MTAyNTg5MjM3ODM2MTQ3MTA0Ng.GR4n6r.BbXVIwmqIEUy_BiCGIc8VieJman4NYBEFowN64"
+const imgGen = require("./imgGen")
 
 const client = new Client({
     intents: [
@@ -22,4 +22,13 @@ client.on("messageCreate", (message) => {
     }
 })
 
+const BoasVindasMD = "1025895863471579208"
+
+client.on("guildMemberAdd"), async (member) => {
+    const img = await imgGen(member)
+    member.guild.channels.cache.get(BoasVindasMD).send({
+        content: `<@${member.id}>, seja bem-vindo!`,
+        files: [img]
+    })
+}
 client.login(process.dotenv.TOKEN)
